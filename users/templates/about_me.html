@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% load static %}
+{% block page_header %}
+<h2>Hi, I am Abdurrahaman!</h2>
+{% endblock page_header %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="rounded float-left mr-4">
+	<img src="{% static 'assets/abdurrahman.jpg' %}" class="img-fluid" alt="Responsive image" id="mypic" height="500px"
+		width="500px">
+</div>
+<div class="container">
+	<h4 style="text-align: justify;">
+		<p>I am glad that you're here!<br></br>
+			I'm a Self-taught Python Developer who is very passionate about Web Application Software Development using
+			the powerful python 3 framework django.<br></br>
+			All because I love the (dot) .com stuff coupled with Pythonic way of life!<br></br>
+			I created this Web Application in order to help students especially my colleagues track their
+			learning in my school!<br></br>
+			In case of any feed back you can email me at
+			<a href="mailto:Abdurrahamanabdullahi20@gmail.com">Abdurrahamanabdullahi20@gmail.com</a>
+			<br>
+			Happy learning!
+		</p>
+	</h4>
+</div>
+{% endblock content %}

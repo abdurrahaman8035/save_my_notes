@@ -1,0 +1,69 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<title>Save My Notes</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+		<a class="navbar-brand" href="{% url 'notes:index'%}">
+			Save My Notes</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+			aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'notes:topics'%}">
+						Topics</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'users:about_me' %}">
+						About Developer</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				{% if user.is_authenticated %}
+				<li class="nav-item">
+					<span class="navbar-text">Hello, {{ user.username }}.</span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+				</li>
+
+				{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'users:register' %}">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'users:login' %}">Log in</a>
+				</li>
+				{% endif %}
+			</ul>
+		</div>
+	</nav>
+	<main role="main" class="container">
+		<div class="pb-2 mb-2 border-bottom">
+			{% block page_header %}{% endblock page_header %}
+		</div>
+		<div>
+			{% block content %}{% endblock content %}
+		</div>
+	</main>
+	<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+	<script src="./static/js/jquery_umcompressed.js"></script>
+	<script src="./static/js/jquery.js"></script>
+	<script src="./static/js/popper.js"></script>
+	<script src="./static/js/boostrap.min.js"></script>
+</body>
+
+</html>
