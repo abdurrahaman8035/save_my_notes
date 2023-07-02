@@ -14,7 +14,6 @@ def index(request):
 def topics(request):
     """the page to display all topics"""
     topics = Topic.objects.filter(owner=request.user).order_by("date_added")
-    # A context is a dict that is used to hold the data we wil use (topics) and 'topics' as key to represent our data in the our templates dynamically.
     context = {"topics": topics}
     return render(request, "topics.html", context)
 
