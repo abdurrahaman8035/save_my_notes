@@ -106,6 +106,3 @@ Please ensure that your code follows the project's coding conventions and includ
 
 The Save My Notes app is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Contact
-
-If you have any questions, suggestions, or issues, please feel free to contact us at [your-email@example.com](mailto:your-email@example.com).
